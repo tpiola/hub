@@ -1,5 +1,9 @@
 # 🌐 THIAGO LAB HUB — SaaS Intelligence System
 
+> **📊 [Piola.Build — Sites Premium (GitHub Project)](https://github.com/users/tpiola/projects/3)** — board central com todos os 15+ repositórios do ecossistema, organizados por nicho, stack, fase e pacote. Detalhes: [PROJECT.md](./PROJECT.md).
+>
+> **🚀 [piola-site-template](https://github.com/tpiola/piola-site-template)** — template repository oficial. Clique em "Use this template" para clonar um novo site de cliente.
+
 ## Arquitetura do Ecossistema
 
 ```
