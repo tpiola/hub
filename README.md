@@ -1,114 +1,64 @@
-# 🌐 THIAGO LAB HUB — SaaS Intelligence System
+# TPiola Hub
 
-> **📊 [Piola.Build — Sites Premium (GitHub Project)](https://github.com/users/tpiola/projects/3)** — board central com todos os 15+ repositórios do ecossistema, organizados por nicho, stack, fase e pacote. Detalhes: [PROJECT.md](./PROJECT.md).
->
-> **🚀 [piola-site-template](https://github.com/tpiola/piola-site-template)** — template repository oficial. Clique em "Use this template" para clonar um novo site de cliente.
+Fonte única de governança dos projetos mantidos na conta [`@tpiola`](https://github.com/tpiola).
 
-## Arquitetura do Ecossistema
+Este repositório não é uma aplicação para deploy. Ele documenta quais projetos são oficiais, quais podem ser publicados e quais existem apenas para histórico, template ou experimentação.
 
-```
-┌─────────────────────────────────────────────────────┐
-│              THIAGO LAB HUB (Saas)                   │
-│  Conector universal de IA + Produtos Digitais        │
-├─────────────────────────────────────────────────────┤
-│                                                     │
-│  🧠 HERMES AGENT (orquestrador central)              │
-│  ├─ 🤖 DeepSeek V4 · Gemini · Claude · GPT-4.1      │
-│  ├─ 🔧 47 skills instaladas (design, dev, dados)     │
-│  └─ 📡 OmniRoute Gateway (48 modelos, porta 20128)   │
-│                                                     │
-│  📦 PRODUTOS DIGITAIS                                │
-│  ├─ thiagopiola.com.br  → Authority Card Pharma      │
-│  ├─ reidasvendas.com.br → Design System Pinnacle     │
-│  ├─ saudegpt.com        → Sovereign Game OS          │
-│  ├─ thiagolab.com       → Intelligence OS            │
-│  └─ sentinelasaudeambiental.com.br                   │
-│                                                     │
-│  🔌 INTEGRAÇÕES                                      │
-│  ├─ 📓 Notion (via API MCP)                         │
-│  ├─ 📧 Gmail (leitura, envio, drafts)               │
-│  ├─ ☁️ Google Drive (Docs, Sheets, Slides)           │
-│  ├─ 💾 Supabase (auth, db, realtime)                 │
-│  ├─ 📊 n8n (workflows de automação)                  │
-│  └─ 🛒 Shopify (e-commerce)                         │
-│                                                     │
-│  🎨 DESIGN SYSTEMS                                   │
-│  ├─ Rei das Vendas Gold (tokens, Style Dictionary)   │
-│  ├─ SaúdeGPT Navy Luxury (globals.css consolidado)   │
-│  ├─ Thiago Lab Intelligence OS (#06080C, #3DF5C5)     │
-│  └─ Authority Card Pharma (#0B3B3C Medical Teal)     │
-│                                                     │
-│  📈 ANALYTICS                                        │
-│  ├─ Vercel Analytics + Speed Insights                │
-│  └─ PostHog (eventos, funis, retenção)               │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
+## Projetos oficiais
 
-## Sites no Ar
+| Repositório | Finalidade | Estado | Deploy independente |
+|---|---|---:|---:|
+| [`reidasvendas`](https://github.com/tpiola/reidasvendas) | Site, design system, APIs e automações do Rei das Vendas | Ativo | Sim |
+| [`thiagopiola`](https://github.com/tpiola/thiagopiola) | Portfólio profissional | Produção | Sim |
+| [`saudegpt`](https://github.com/tpiola/saudegpt) | Plataforma principal SaúdeGPT | Ativo | Sim |
+| [`sentinela-saude-ambiental`](https://github.com/tpiola/sentinela-saude-ambiental) | Site oficial da Sentinela | Produção | Sim |
+| [`thiago-lab`](https://github.com/tpiola/thiago-lab) | Laboratório de produtos e ferramentas | Ativo | Sim |
+| [`terapeuta`](https://github.com/tpiola/terapeuta) | Projeto de cliente do nicho terapêutico | Ativo | Sim |
+| [`valdecikeeus`](https://github.com/tpiola/valdecikeeus) | E-commerce Keeus | Ativo | Sim |
+| [`chuteiras`](https://github.com/tpiola/chuteiras) | E-commerce de chuteiras | Ativo | Sim |
+| [`drogalar`](https://github.com/tpiola/drogalar) | Projeto do segmento farmacêutico | Desenvolvimento | Sim |
+| [`spes`](https://github.com/tpiola/spes) | Jornada e comunidade SPES | Ativo | Sim |
 
-| Site | URL | Stack | Status | Último Deploy |
-|------|-----|-------|--------|---------------|
-| Authority Card Pharma | thiagopiola.com.br | HTML/CSS puro (SSG) | ✅ Pronto para deploy |
-| Rei das Vendas | reidasvendas.com.br | Vite + Tokens DS | ✅ Design System |
-| SaúdeGPT | saudegpt.com | Next 16 + Game OS | ✅ 9 jogos, XP, ranking |
-| Thiago Lab | thiagolab.com | Next 15 + Intelligence OS | ✅ Build 0 erros |
-| Sentinela Saúde | sentinelasaudeambiental.com.br | Próximo ciclo | ⏳ |
+## Infraestrutura e componentes
 
-## Habilidades Hermes Instaladas (47 skills)
+| Repositório | Papel | Regra |
+|---|---|---|
+| [`hub`](https://github.com/tpiola/hub) | Catálogo e governança | Não publicar |
+| [`piola-site-template`](https://github.com/tpiola/piola-site-template) | Base para novos projetos | Usar como template; não publicar diretamente |
+| [`saudegpt-core`](https://github.com/tpiola/saudegpt-core) | Biblioteca experimental | Não conectar à Vercel enquanto não for consumida pelo projeto principal |
+| [`tpiolalocal`](https://github.com/tpiola/tpiolalocal) | Protótipo de CRM local | Pausado; não publicar até retomada |
 
-### Design & UI/UX (9)
-- premium-design-framework, premium-web-design, power-design, design-genius
-- ui-ux-pro-max, material-design-3, google-stitch-advanced-web-design-motion-cwv
-- premium-portfolio-redesign, design-plus-code
+## Verticais incorporadas ao SaúdeGPT
 
-### Desenvolvimento (8)
-- tailwind-css, production-saas-site-builder, vibe-coding
-- mobile-first-responsive, nextjs-upgrade-workflow, subagent-driven-development
-- test-driven-development, html-in-canvas-api
+Os repositórios abaixo estão arquivados e não devem gerar deploy separado:
 
-### DevOps & Deploy (6)
-- docker-management, vercel-deploy-premium, hostinger-vps
-- inference-sh-cli, omniroute, skills-infrastructure-manager
+- `saudegpt-nutricao`
+- `saudegpt-fisioterapia`
+- `saudegpt-psicologia`
 
-### Dados & Automação (5)
-- workflow-automation (Make.com, n8n), watchers
-- chroma, faiss, qdrant-vector-search
+As especificações funcionais ficam centralizadas no repositório `saudegpt`.
 
-### IA & ML (5)
-- google-gemini-ai, openai-image-generation, huggingface-hub
-- outlines, instructor
+## Repositórios descontinuados
 
-### Conteúdo & SEO (5)
-- copywriting, site-audit, ecommerce-content-marketing
-- local-business-seo, seo-tools
+Os projetos abaixo foram substituídos por fontes oficiais. Seus pontos de entrada de deploy foram removidos quando existiam:
 
-### Jogos & Gamificação (3)
-- sovereign-game-os (custom), architecture-diagram, concept-diagrams
+| Legado | Substituído por |
+|---|---|
+| `sentinela-dedetizadora` | `sentinela-saude-ambiental` |
+| `thiago-ai-studio` | `thiagopiola` |
+| `vendas-ai-studio` | `reidasvendas` |
+| `catolico-ai-studio` | `spes` |
+| `thiago` | `thiagopiola` |
+| `site.ai.studio` | `hub` |
 
-### Produtividade (6)
-- notion, google-workspace, obsidian, siyuan
-- memento-flashcards, here.now
+Esses repositórios podem ser excluídos definitivamente nas configurações do GitHub após a conferência final do proprietário.
 
-## Deploy Imediato
+## Regra de publicação
 
-```bash
-# Authority Card (thiagopiola.com.br)
-cp /opt/data/projects/authority-card/index.html /var/www/thiagopiola/public/
-cd /opt/data/projects/thiagopiola && git add -A && git commit -m "feat: authority card" && git push
+1. Cada domínio possui um único repositório oficial.
+2. Apenas projetos marcados como “Deploy independente: Sim” devem ser conectados à Vercel.
+3. Template, biblioteca, catálogo, protótipo pausado e legado não recebem projeto Vercel.
+4. Alterações entram no `main` somente após `lint`, `typecheck` e `build`, quando os scripts existirem.
+5. Variáveis privadas permanecem na plataforma de deploy e nunca entram no Git.
 
-# Design System RDV
-cd /opt/data/projects/reidasvendas && pnpm run build
-cd packages/design-system && npm run build
-
-# Thiago Lab (thiagolab.com)
-cd /opt/data/projects/thiago-lab && docker compose up -d --build
-```
-
-## Próximos Passos
-
-1. 🚀 Deploy Authority Card no Vercel (git push)
-2. 🎨 Integrar tokens do Design System no site RDV
-3. 🔗 Conectar Notion como CMS dos sites
-4. 📊 Dashboard unificado de analytics
-5. 🤖 Pipeline de IA: Hermes → n8n → Supabase → Sites
+Detalhes e critérios de manutenção: [`PROJECT.md`](./PROJECT.md).
