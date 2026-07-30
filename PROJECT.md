@@ -1,137 +1,87 @@
-# 🜂 Piola.Build — Sites Premium (GitHub Project v2)
+# Governança dos repositórios
 
-> **Board central de todos os repositórios de sites e plataformas piola.build.**
-> [🔗 Abrir Project no GitHub](https://github.com/users/tpiola/projects/3)
+## Objetivo
 
----
+Manter uma fonte de código por produto, reduzir manutenção duplicada e impedir que versões antigas sejam publicadas por engano.
 
-## 📊 Estrutura do Project
+## Classificação
 
-O Project **"Piola.Build — Sites Premium"** organiza todos os 15+ repositórios da conta [`@tpiola`](https://github.com/tpiola) com **8 campos customizados** para gestão profissional:
+### Produto
 
-| Campo | Tipo | Valores |
+Aplicação ou site com domínio, público e ciclo de manutenção próprios. Pode receber projeto independente na Vercel.
+
+### Infraestrutura
+
+Código ou documentação compartilhada. Não deve ser publicado como site independente.
+
+### Template
+
+Base usada para criar um novo repositório. O template em si não recebe domínio nem projeto de produção.
+
+### Protótipo pausado
+
+Código preservado para retomada futura, sem conexão ativa de deploy.
+
+### Legado
+
+Projeto substituído por outro repositório. Deve conter apenas aviso de descontinuação e histórico; nenhum ponto de entrada executável.
+
+## Mapa oficial
+
+| Produto | Repositório oficial | Observação |
 |---|---|---|
-| **Status** | select | Todo · In Progress · Done |
-| **Nicho** | select | Farmácia/Saúde · Odontologia · Restaurante · Fitness · Advocacia · Estética · E-commerce · Terapia · Plataforma/SaaS · Institucional |
-| **Stack** | select | Next.js 15 · Next.js+Supabase · Vite SPA · Monorepo Turborepo · Python/FastAPI |
-| **Fase** | select | 📋 Backlog · 🎨 Design · 🔨 Dev · 🧪 Homologação · 🚀 Produção · 🔧 Manutenção · ⏸️ Pausado |
-| **Pacote** | select | STARTER R$2.5K · PRO R$5K · PREMIUM R$10K · Interno |
-| **URL Live** | text | Domínio publicado |
-| **Cliente** | text | Nome do cliente/empresa |
-| **HERMES-Score** | number | Score 0-100 do lead/projeto |
-| **MRR (R$)** | number | Receita recorrente mensal |
+| Rei das Vendas | `reidasvendas` | Monorepo com site, design system, API e automações |
+| Portfólio Thiago Piola | `thiagopiola` | Substitui páginas estáticas AI Studio |
+| SaúdeGPT | `saudegpt` | Plataforma principal e destino das verticais |
+| Sentinela Saúde Ambiental | `sentinela-saude-ambiental` | Única fonte para site e captura de leads |
+| Thiago Lab | `thiago-lab` | Laboratório de ferramentas e produtos |
+| SPES | `spes` | Substitui `catolico-ai-studio` |
+| Terapia | `terapeuta` | Projeto independente de cliente |
+| Keeus | `valdecikeeus` | E-commerce independente |
+| Chuteiras | `chuteiras` | E-commerce independente |
+| Drogalar | `drogalar` | Projeto farmacêutico em desenvolvimento |
 
----
+## Consolidações realizadas
 
-## 🏷️ Sistema de Labels (padronizado em todos os repos)
+- `sentinela-dedetizadora` → `sentinela-saude-ambiental`
+- `thiago-ai-studio` e `thiago` → `thiagopiola`
+- `vendas-ai-studio` → `reidasvendas`
+- `catolico-ai-studio` → `spes`
+- `saudegpt-nutricao`, `saudegpt-fisioterapia` e `saudegpt-psicologia` → especificações no `saudegpt`
+- `site.ai.studio` → catálogo no `hub`
 
-**27 labels** aplicadas automaticamente em cada repositório do ecossistema:
+## Projetos que não devem receber deploy
 
-### Prioridade
-`priority/critical` · `priority/high` · `priority/medium` · `priority/low`
+- `hub`
+- `piola-site-template`
+- `saudegpt-core`
+- `tpiolalocal`, enquanto estiver pausado
+- todos os repositórios descontinuados ou arquivados
 
-### Tipo
-`type/feature` · `type/bug` · `type/design` · `type/copy` · `type/seo` · `type/perf` · `type/security` · `type/deploy` · `type/docs`
+## Critérios antes de excluir um repositório
 
-### Stack
-`stack/nextjs` · `stack/supabase` · `stack/tailwind` · `stack/vercel`
+1. O repositório oficial substituto está identificado.
+2. Não existe domínio, webhook, banco ou automação dependendo do legado.
+3. O código relevante está no projeto oficial ou não possui valor técnico.
+4. O README do legado registra o destino correto.
+5. A Vercel não mantém projeto de produção conectado ao legado.
 
-### Cliente (Pacote)
-`cliente/premium` · `cliente/pro` · `cliente/starter`
+## Checklist de qualidade para projetos ativos
 
-### Fase
-`fase/design` · `fase/dev` · `fase/qa` · `fase/producao` · `fase/manutencao`
+- script único `validate` ou equivalente;
+- lint sem avisos relevantes;
+- TypeScript sem erros;
+- build de produção aprovado;
+- `.env.example` sem segredos;
+- nenhuma URL de webhook privada no frontend;
+- canonical, sitemap e robots coerentes;
+- apenas um projeto Vercel por produto;
+- documentação curta com repositório e domínio oficiais.
 
-### Hermes
-`hermes/neurobuild` · `hermes/auto-deploy`
+## Política contra loops de deploy
 
----
-
-## 🏷️ Topics dos Repositórios
-
-Todos os repos têm o topic `piola-build` + topics específicos do nicho/stack.
-Busque por `topic:piola-build` no GitHub para ver o ecossistema:
-[🔗 github.com/search?q=topic:piola-build+org:tpiola](https://github.com/search?q=topic%3Apiola-build+user%3Atpiola)
-
----
-
-## 🚀 Template Repository
-
-**[tpiola/piola-site-template](https://github.com/tpiola/piola-site-template)** — clique em **"Use this template"** para clonar um novo site de cliente em 1 clique.
-
-O template já vem com:
-- Next.js 15 (App Router) + TypeScript strict
-- Tailwind CSS 4 + shadcn/ui + Framer Motion
-- Estrutura de landing page Hermes (Hero → Preço → CTA)
-- WhatsApp flutuante + Schema LocalBusiness
-- LGPD (banner + política + rota /excluir-dados)
-- Supabase-ready (auth + RLS helpers)
-- Stripe + Mercado Pago (Pix) stubs
-- CI/CD (typecheck + lint + build)
-- Issue templates + PR template com checklist Error-Proof
-
----
-
-## 📋 Repositórios Mapeados (15)
-
-| Repo | Nicho | Stack | Fase | Pacote |
-|---|---|---|---|---|
-| [thiagopiola](https://github.com/tpiola/thiagopiola) | Institucional | Next.js 15 | 🚀 Produção | Interno |
-| [drogalar](https://github.com/tpiola/drogalar) | Farmácia/Saúde | Next.js 15 | 🔨 Dev | PREMIUM |
-| [saudegpt](https://github.com/tpiola/saudegpt) | Plataforma/SaaS | Next.js+Supabase | 🚀 Produção | Interno |
-| [saudegpt-core](https://github.com/tpiola/saudegpt-core) | Plataforma/SaaS | Next.js+Supabase | 🔨 Dev | Interno |
-| [saudegpt-psicologia](https://github.com/tpiola/saudegpt-psicologia) | Terapia/Psicologia | Next.js+Supabase | 🔨 Dev | Interno |
-| [saudegpt-fisioterapia](https://github.com/tpiola/saudegpt-fisioterapia) | Fitness/Esporte | Next.js+Supabase | 🔨 Dev | Interno |
-| [saudegpt-nutricao](https://github.com/tpiola/saudegpt-nutricao) | Farmácia/Saúde | Next.js+Supabase | 🔨 Dev | Interno |
-| [reidasvendas](https://github.com/tpiola/reidasvendas) | Plataforma/SaaS | Turborepo | 🔨 Dev | Interno |
-| [sentinela-saude-ambiental](https://github.com/tpiola/sentinela-saude-ambiental) | Plataforma/SaaS | Next.js 15 | 🧪 Homologação | Interno |
-| [terapeuta](https://github.com/tpiola/terapeuta) | Terapia/Psicologia | Next.js 15 | 📋 Backlog | STARTER |
-| [valdecikeeus](https://github.com/tpiola/valdecikeeus) | E-commerce | Next.js 15 | 🔨 Dev | PRO |
-| [chuteiras](https://github.com/tpiola/chuteiras) | E-commerce | Next.js 15 | 📋 Backlog | PRO |
-| [tpiolalocal](https://github.com/tpiola/tpiolalocal) | Plataforma/SaaS | Next.js 15 | 🔨 Dev | Interno |
-| [thiago-lab](https://github.com/tpiola/thiago-lab) | Plataforma/SaaS | Next.js+Supabase | 🧪 Homologação | Interno |
-| [hub](https://github.com/tpiola/hub) | Plataforma/SaaS | Python/FastAPI | 🔨 Dev | Interno |
-
----
-
-## 🛠️ Como usar no dia a dia
-
-### Criar novo site de cliente
-1. GitHub → `piola-site-template` → **Use this template**
-2. Nome: `cliente-nome` (privado)
-3. O novo repo já vem com labels, templates e CI configurados
-4. Vá no Project e adicione o repo como draft item (título com emoji do nicho)
-5. Preencha: Nicho · Stack · Fase · Pacote · Cliente
-
-### Abrir issue rastreada
-- Bugs → template `bug_report` (label auto `type/bug`)
-- Features → template `feature_request` (label auto `type/feature`)
-- Onboarding → template `client_onboarding` (label auto `hermes/neurobuild`)
-
-### PRs
-- Todo PR passa pelo checklist Error-Proof automaticamente
-- CI valida: typecheck + lint + build
-
----
-
-## 📈 Métricas do Ecossistema
-
-Para consultar rapidamente (via `gh` CLI):
-
-```bash
-# Todos os repos piola.build
-gh search repos --owner tpiola --topic piola-build
-
-# Issues abertas em todos
-gh search issues --owner tpiola --state open
-
-# PRs pendentes de review
-gh search prs --owner tpiola --state open --review-requested tpiola
-
-# Todos os "Cliente Premium"
-gh search issues --owner tpiola --label cliente/premium
-```
-
----
-
-*Configurado por Hermes Agent | piola.build | thiago.piola@cs.unifran.edu.br*
+- não usar commits vazios ou comentários como gatilho de redeploy;
+- não manter dois repositórios ligados ao mesmo domínio;
+- não duplicar `vercel.json` sem necessidade;
+- corrigir a causa do build e executar uma única validação final;
+- deploy é solicitado somente após o commit definitivo estar no `main`.
